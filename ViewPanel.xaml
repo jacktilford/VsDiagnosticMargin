@@ -1,0 +1,43 @@
+﻿<StackPanel
+    x:Class="DiagnosticMargin.ViewPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="20"
+    Orientation="Horizontal"
+    Background="Khaki">
+
+    <StackPanel.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Control.Background" Value="Transparent" />
+            <Setter Property="Control.BorderBrush" Value="Transparent" />
+            <Setter Property="Margin" Value="0,2,4,0" />
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBlock Text="{Binding Path=ContentTypeText, Mode=OneWay}" ToolTip="ContentType of Text Data Model" />
+    <TextBlock Text="VLeft: "/>
+    <TextBlock Text="{Binding Path=ViewportLeftText, Mode=OneWay}" ToolTip="Coordinate of left side of viewport" />
+    <TextBlock Text="VTop: "/>
+    <TextBlock Text="{Binding Path=ViewportTopText, Mode=OneWay}" ToolTip="Coordinate of top of viewport" />
+    <TextBlock Text="CTop: "/>
+    <TextBlock Text="{Binding Path=CaretTopText, Mode=OneWay}" ToolTip="Coordinate of top of caret" />
+    <TextBlock Text="LTop: "/>
+    <TextBlock Text="{Binding Path=CaretLineTopText, Mode=OneWay}" ToolTip="Coordinate of top of caret line" />
+    <TextBlock Text="#: "/>
+    <TextBlock Text="{Binding Path=LayoutText, Mode=OneWay}" ToolTip="Layouts" />
+    <TextBlock Text="LNew: "/>
+    <TextBlock Text="{Binding Path=LayoutNewText, Mode=OneWay}" ToolTip="New or Reformatted lines in last layout" />
+    <TextBlock Text="LTrans: "/>
+    <TextBlock Text="{Binding Path=LayoutTransText, Mode=OneWay}" ToolTip="Translated lines in last layout" />
+
+    <Button Click="PropertiesButtonClick"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            VerticalAlignment="Center"
+            ToolTip="Contents of property bag">
+        Properties
+    </Button>
+    <TextBlock Text="{Binding Path=RolesText, Mode=OneWay}"
+               Margin="4,4,0,0"
+               ToolTip="Text View Roles" />
+</StackPanel>
